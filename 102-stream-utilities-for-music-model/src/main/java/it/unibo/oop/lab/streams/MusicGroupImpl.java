@@ -1,5 +1,6 @@
 package it.unibo.oop.lab.streams;
 
+import java.security.Key;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -41,7 +42,8 @@ public final class MusicGroupImpl implements MusicGroup {
 
     @Override
     public Stream<String> albumInYear(final int year) {
-        return null;
+        return this.albums.entrySet().stream().filter(e -> e.getValue() == year).map(e -> e.getKey());
+
     }
 
     @Override
