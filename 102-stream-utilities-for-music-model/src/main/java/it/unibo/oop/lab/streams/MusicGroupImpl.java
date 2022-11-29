@@ -50,6 +50,14 @@ public final class MusicGroupImpl implements MusicGroup {
     public int countSongs(final String albumName) {
         return (int) this.songs.stream().filter(s -> s.getAlbumName().isPresent())
                     .filter(s -> s.getAlbumName().get().equals(albumName)).count();
+
+        //What about doing:
+        /*
+         * Suggestion --> return number of songs, by using the method below...
+         *                          #CODE# 
+         * return (int) this.songs.stream().filter(s -> s.getAlbumName().ifPresent())
+         *              .filter(s -> s.getAlbumName().get().equals(albumName)).count();
+         */
     }
 
     @Override
